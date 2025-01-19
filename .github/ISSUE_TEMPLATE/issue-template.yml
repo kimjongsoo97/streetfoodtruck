@@ -1,64 +1,41 @@
-name: Bug Report
-description: File a bug report.
-title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - octocat
+name: '이슈 생성'
+description: 'Repo에 이슈를 생성하며, 생성된 이슈는 Jira와 연동됩니다.'
+labels: [feat]
+title: '이슈 이름을 작성해주세요'
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
   - type: input
-    id: contact
+    id: parentKey
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: '🎟️ 상위 작업 (Ticket Number)'
+      description: '상위 작업의 Ticket Number를 기입해주세요'
+      placeholder: 'PRJ-00'
     validations:
       required: true
-  - type: dropdown
-    id: version
+
+  - type: input
+    id: branch
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
+      label: '🌳 브랜치명 (Branch)'
+      description: '영어로 브랜치명을 작성해주세요'
     validations:
       required: true
-  - type: dropdown
-    id: browsers
+      
+  - type: input
+    id: description
     attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      label: '📝 상세 내용(Description)'
+      description: '이슈에 대해서 간략히 설명해주세요'
+    validations:
+      required: true
+
   - type: textarea
-    id: logs
+    id: tasks
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: '✅ 체크리스트(Tasks)'
+      description: '해당 이슈에 대해 필요한 작업목록을 작성해주세요'
+      value: |
+        - [ ] Task1
+        - [ ] Task2
+    validations:
+      required: true
+출처: https://lamerry.tistory.com/entry/프로젝트에서-Jira-사용하기-3-Github-Actions로-GithubJira-이슈-자동화?category=1265013 [시니유의 개발 블로그:티스토리]
