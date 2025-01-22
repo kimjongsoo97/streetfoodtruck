@@ -10,7 +10,7 @@ public class TestController {
 
     @GetMapping("/api/test")
     public String test() {
-        return "issue close test";
+        return "issue close tests";
     }
 
 }
