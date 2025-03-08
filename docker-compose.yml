@@ -1,0 +1,14 @@
+services:
+  my-db:
+    container_name: streetfoodtruk_mysql
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: streetfoodtruk
+      TZ: Asia/Seoul
+      CHARACTER_SET_SERVER: utf8mb4
+    ports:
+      - 3306:3306
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
