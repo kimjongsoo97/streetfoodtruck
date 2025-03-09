@@ -7,7 +7,6 @@ public enum BusinessError {
 
     // POST 4000 ~ 4999번대
     DUPLICATE_LIKE_ERROR(4000, "예외 테스트");
-
     private final int code;
     private final String message;
 
